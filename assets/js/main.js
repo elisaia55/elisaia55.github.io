@@ -255,29 +255,6 @@
 
 
   // Get elements
-const clickableDiv = document.getElementById('clickableDiv');
-const imageModal = document.getElementById('imageModal');
-
-// Show modal when div is clicked
-clickableDiv.addEventListener('click', function() {
-  imageModal.style.display = 'flex';
-});
-
-// Hide modal when clicked outside the image
-imageModal.addEventListener('click', function(event) {
-  if (event.target !== this) return;
-  imageModal.style.display = 'none';
-});
-
-const closeButton = document.getElementById('closeButton');
-
-// Existing code...
-
-// Close modal when "X" is clicked
-closeButton.addEventListener('click', function() {
-  imageModal.style.display = 'none';
-});
-
 
 
 

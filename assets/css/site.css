@@ -766,8 +766,11 @@ ul {
 }
 
 .project-media img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: var(--media-pad, 28px);
+  left: var(--media-pad, 28px);
+  width: calc(100% - 2 * var(--media-pad, 28px));
+  height: calc(100% - var(--media-pad, 28px));
   object-fit: cover;
   object-position: top left;
   border-radius: 10px 10px 0 0;
@@ -875,7 +878,7 @@ ul {
   .project-media {
     min-height: 0;
     aspect-ratio: 16 / 10;
-    padding: 20px 20px 0;
+    --media-pad: 20px;
   }
 
   .project-body {
