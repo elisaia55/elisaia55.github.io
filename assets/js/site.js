@@ -3,17 +3,10 @@
 
   document.documentElement.classList.add("js");
 
+  const root = document.documentElement;
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("nav-links");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /**
-   * Header background once the page scrolls
-   */
-  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
 
   /**
    * Mobile menu
@@ -29,6 +22,9 @@
   nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") setMenu(false);
+  });
+  document.addEventListener("click", (e) => {
+    if (nav.classList.contains("open") && !header.contains(e.target)) setMenu(false);
   });
 
   /**
@@ -53,7 +49,7 @@
   document.querySelectorAll("main section[id]").forEach((s) => sectionObserver.observe(s));
 
   /**
-   * Fade sections in as they scroll into view
+   * Reveal content as it scrolls into view
    */
   document.querySelectorAll("[data-stagger]").forEach((group) => {
     [...group.children].forEach((child, i) => child.style.setProperty("--i", i));
@@ -67,33 +63,10 @@
         obs.unobserve(entry.target);
       });
     },
-    { rootMargin: "0px 0px -8% 0px" }
+    { rootMargin: "0px 0px -10% 0px" }
   );
 
   document.querySelectorAll(".reveal, [data-stagger]").forEach((el) => revealObserver.observe(el));
-
-  /**
-   * Count up the hero stats once the intro has played
-   */
-  const countUp = (el) => {
-    const end = Number(el.dataset.count);
-    const duration = 1600;
-    const start = performance.now();
-
-    const tick = (now) => {
-      const t = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - t, 4);
-      el.textContent = Math.round(end * eased).toLocaleString();
-      if (t < 1) requestAnimationFrame(tick);
-    };
-
-    requestAnimationFrame(tick);
-  };
-
-  document.querySelectorAll("[data-count]").forEach((el) => {
-    el.textContent = reduceMotion ? Number(el.dataset.count).toLocaleString() : "0";
-    if (!reduceMotion) setTimeout(() => countUp(el), 800);
-  });
 
   /**
    * Tech marquee: duplicate the list so it loops seamlessly
@@ -108,24 +81,12 @@
   }
 
   /**
-   * Scroll-linked effects: progress bar and timeline line
+   * Scroll: header pill and progress bar
    */
-  const root = document.documentElement;
-  const timeline = document.querySelector(".timeline");
-  const timelineFill = document.querySelector(".timeline-track span");
-  const roles = [...document.querySelectorAll(".role")];
-
-  const onScrollFx = () => {
+  const onScroll = () => {
+    header.classList.toggle("scrolled", window.scrollY > 24);
     const max = root.scrollHeight - window.innerHeight;
     root.style.setProperty("--progress", max > 0 ? window.scrollY / max : 0);
-
-    if (timeline) {
-      const box = timeline.getBoundingClientRect();
-      const mark = window.innerHeight * 0.6;
-      const fill = Math.min(Math.max((mark - box.top) / box.height, 0), 1);
-      timelineFill.style.setProperty("--fill", fill);
-      roles.forEach((role) => role.classList.toggle("lit", role.getBoundingClientRect().top + 43 < mark));
-    }
   };
 
   let scrollQueued = false;
@@ -135,64 +96,62 @@
       if (scrollQueued) return;
       scrollQueued = true;
       requestAnimationFrame(() => {
-        onScrollFx();
+        onScroll();
         scrollQueued = false;
       });
     },
     { passive: true }
   );
-  onScrollFx();
+  onScroll();
 
   /**
-   * Pointer effects (desktop only): cursor spotlight, card glow, portrait tilt
+   * Copy email to clipboard
    */
-  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const status = document.querySelector(".copy-status");
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    const label = btn.querySelector("span");
+    const icon = btn.querySelector("i");
+    let timer;
 
-  if (finePointer && !reduceMotion) {
-    const spotlight = document.querySelector(".spotlight");
-    let px = 0;
-    let py = 0;
-    let pointerQueued = false;
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy);
+      } catch {
+        window.location.href = "mailto:" + btn.dataset.copy;
+        return;
+      }
+      btn.classList.add("copied");
+      label.textContent = "Copied";
+      icon.className = "bi bi-check2";
+      if (status) status.textContent = "Email copied. Talk soon.";
 
-    window.addEventListener(
-      "pointermove",
-      (e) => {
-        px = e.clientX;
-        py = e.clientY;
-        if (pointerQueued) return;
-        pointerQueued = true;
-        requestAnimationFrame(() => {
-          spotlight.style.setProperty("--x", px + "px");
-          spotlight.style.setProperty("--y", py + "px");
-          pointerQueued = false;
-        });
-      },
-      { passive: true }
-    );
-
-    document.querySelectorAll(".glow").forEach((card) => {
-      card.addEventListener("pointermove", (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty("--mx", e.clientX - r.left + "px");
-        card.style.setProperty("--my", e.clientY - r.top + "px");
-      });
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        btn.classList.remove("copied");
+        label.textContent = "Copy";
+        icon.className = "bi bi-clipboard";
+        if (status) status.textContent = "";
+      }, 2400);
     });
+  });
 
-    const portrait = document.querySelector(".hero-portrait");
-    const hero = document.querySelector(".hero");
-    if (portrait && hero) {
-      hero.addEventListener("pointermove", (e) => {
-        const r = portrait.getBoundingClientRect();
-        const dx = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
-        const dy = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
-        portrait.style.setProperty("--ry", (dx * 14).toFixed(2) + "deg");
-        portrait.style.setProperty("--rx", (-dy * 14).toFixed(2) + "deg");
-      });
-      hero.addEventListener("pointerleave", () => {
-        portrait.style.setProperty("--rx", "0deg");
-        portrait.style.setProperty("--ry", "0deg");
-      });
-    }
+  /**
+   * Local time in the Bay Area
+   */
+  const clock = document.getElementById("local-time");
+  if (clock) {
+    const fmt = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Los_Angeles",
+      hour: "numeric",
+      minute: "2-digit",
+    });
+    const tick = () => {
+      const now = new Date();
+      clock.textContent = fmt.format(now);
+      clock.dateTime = now.toISOString();
+    };
+    tick();
+    setInterval(tick, 15000);
   }
 
   document.getElementById("year").textContent = new Date().getFullYear();
