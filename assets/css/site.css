@@ -2,14 +2,14 @@
 # Tokens
 --------------------------------------------------------------*/
 :root {
-  --paper: #f4f0e8;
-  --paper-2: #ece6da;
-  --card: #faf8f3;
+  --paper: #f7f7f4;
+  --paper-2: #ededea;
+  --card: #fdfdfb;
   --ink: #16150f;
   --ink-2: #3b3830;
   --muted: #6b6558;
-  --line: #ddd5c6;
-  --line-strong: #c9bfac;
+  --line: #deded9;
+  --line-strong: #c6c6bf;
 
   --turf: #133f2d;
   --turf-2: #1b5139;
@@ -21,7 +21,7 @@
   --on-dark-muted: rgba(241, 236, 226, 0.68);
   --on-dark-line: rgba(241, 236, 226, 0.14);
 
-  --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --font-display: "Alfa Slab One", "Rockwell", Georgia, serif;
   --font-serif: "Instrument Serif", Georgia, serif;
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -54,6 +54,7 @@ html {
 
 body {
   margin: 0;
+  font-synthesis: none;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
@@ -71,7 +72,7 @@ body::before {
   z-index: -1;
   pointer-events: none;
   opacity: 0.5;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.3 0 0 0 0 0.3 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 img {
@@ -87,9 +88,9 @@ a {
 h1, h2, h3, h4 {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 650;
+  font-weight: 400;
   line-height: 1.05;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 
 h1 em, h2 em {
@@ -309,7 +310,7 @@ ul, ol {
 
 .site-header.scrolled .nav {
   max-width: 880px;
-  background: rgba(250, 248, 243, 0.82);
+  background: rgba(253, 253, 251, 0.82);
   border-color: var(--line);
   box-shadow: 0 12px 32px -16px rgba(22, 21, 15, 0.25);
   backdrop-filter: blur(14px) saturate(1.4);
@@ -443,26 +444,13 @@ ul, ol {
   align-items: center;
 }
 
-.status {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 32px;
-  padding: 8px 16px 8px 14px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--card);
-  color: var(--ink-2);
-  font-size: 14px;
-  font-weight: 500;
-}
 
 .hero-title {
   margin-bottom: 32px;
   font-size: clamp(56px, 8.4vw, 116px);
   font-weight: 700;
   line-height: 0.9;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.015em;
 }
 
 .hero-title em {
@@ -531,7 +519,7 @@ ul, ol {
   font-size: clamp(200px, 26vw, 360px);
   font-weight: 800;
   line-height: 0.8;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.015em;
   opacity: 0.35;
   user-select: none;
 }
@@ -734,7 +722,7 @@ ul, ol {
   font-size: 38px;
   font-weight: 700;
   line-height: 40px;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.015em;
 }
 
 .is-now .stop-year {
@@ -960,9 +948,6 @@ ul, ol {
 
 .section-head {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 24px;
-  align-items: start;
   margin-bottom: 64px;
 }
 
@@ -970,32 +955,10 @@ ul, ol {
   max-width: 17ch;
   font-size: clamp(38px, 5.4vw, 72px);
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.015em;
 }
 
-.kicker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 10px 0 0;
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
 
-.kicker span {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  color: var(--ink);
-  font-size: 11.5px;
-  letter-spacing: 0;
-}
 
 @media (max-width: 760px) {
   :root {
@@ -1007,14 +970,9 @@ ul, ol {
   }
 
   .section-head {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
     margin-bottom: 44px;
   }
 
-  .kicker {
-    margin: 0;
-  }
 }
 
 /* Dark "night game" section */
@@ -1032,14 +990,7 @@ ul, ol {
   color: var(--gold);
 }
 
-.section-dark .kicker {
-  color: var(--on-dark-muted);
-}
 
-.section-dark .kicker span {
-  border-color: var(--on-dark-line);
-  color: var(--on-dark);
-}
 
 .section-dark .tags li {
   border-color: var(--on-dark-line);
@@ -1677,7 +1628,7 @@ ul, ol {
 .project h3 {
   margin-bottom: 16px;
   font-size: clamp(32px, 3.4vw, 44px);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.015em;
 }
 
 .project-body > p:not(.project-num) {
@@ -1949,19 +1900,11 @@ ul, ol {
   font-size: clamp(200px, 30vw, 420px);
   font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.015em;
   pointer-events: none;
 }
 
-.contact .kicker {
-  margin-bottom: 28px;
-  color: var(--on-dark-muted);
-}
 
-.contact .kicker span {
-  border-color: var(--on-dark-line);
-  color: var(--on-dark);
-}
 
 .contact h2 {
   position: relative;
@@ -1971,7 +1914,7 @@ ul, ol {
   font-size: clamp(48px, 8vw, 112px);
   font-weight: 700;
   line-height: 0.92;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.015em;
 }
 
 .contact h2 em {
