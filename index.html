@@ -7,10 +7,10 @@
 
   <title>Augustino Elisaia — Software Engineer</title>
   <meta name="description" content="Augustino Elisaia is a software engineer at Consensus in the San Francisco Bay Area and a former San Francisco 49ers defensive tackle, building with TypeScript, React, Node.js and AWS.">
-  <meta name="theme-color" content="#f7f7f4">
+  <meta name="theme-color" content="#0a0c0f">
 
   <meta property="og:title" content="Augustino Elisaia — Software Engineer">
-  <meta property="og:description" content="From the trenches to the terminal. Full-stack software engineer from the Bay Area, former NFL defensive tackle.">
+  <meta property="og:description" content="Full-stack software engineer from the Bay Area building with TypeScript, React, Node.js and AWS. Former NFL defensive tackle.">
   <meta property="og:image" content="assets/img/about/Headshot.png">
   <meta property="og:type" content="website">
 
@@ -21,7 +21,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
@@ -33,12 +33,13 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="backdrop" aria-hidden="true"></div>
 
   <!-- ======= Header ======= -->
   <header class="site-header">
     <div class="nav">
       <a href="#top" class="brand" aria-label="Augustino Elisaia, back to top">
-        <span class="brand-mark">AE</span>
+        <span class="brand-mark">ae<span class="caret"></span></span>
         <span class="brand-name">Augustino Elisaia</span>
       </a>
 
@@ -47,12 +48,12 @@
       </button>
 
       <nav id="nav-links" class="nav-links" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Work</a>
-        <a href="#skills">Toolkit</a>
-        <a href="#contact">Contact</a>
-        <a class="btn btn-ink btn-sm" target="_blank" rel="noopener" href="https://pdfhost.io/v/W.27~f4fs_Augustino_Elisaia_Resume">Resume <i class="bi bi-arrow-up-right"></i></a>
+        <a href="#about"><span class="nav-num">01</span>About</a>
+        <a href="#experience"><span class="nav-num">02</span>Experience</a>
+        <a href="#projects"><span class="nav-num">03</span>Work</a>
+        <a href="#skills"><span class="nav-num">04</span>Toolkit</a>
+        <a href="#contact"><span class="nav-num">05</span>Contact</a>
+        <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://pdfhost.io/v/W.27~f4fs_Augustino_Elisaia_Resume">Resume <i class="bi bi-arrow-up-right"></i></a>
       </nav>
     </div>
   </header>
@@ -63,21 +64,70 @@
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <h1 class="hero-title">
-            <span class="line"><span style="--d: 100ms">From the</span></span>
-            <span class="line"><span style="--d: 180ms"><em>trenches</em></span></span>
-            <span class="line"><span style="--d: 260ms">to the</span></span>
-            <span class="line"><span style="--d: 340ms">terminal<span class="caret" aria-hidden="true"></span></span></span>
-          </h1>
-
-          <p class="lead intro" style="--d: 420ms">
-            I'm Augustino Elisaia. I spent my twenties as a defensive tackle at Cal Poly and with the
-            San Francisco 49ers. Now I build full-stack products with TypeScript, React, Node.js and AWS.
-            Same work ethic, different playbook.
+          <p class="status-pill intro" style="--d: 0ms">
+            <span class="status-dot"></span> Software Engineer @ Consensus
           </p>
 
-          <div class="hero-actions intro" style="--d: 540ms">
-            <a class="btn btn-ink" href="#projects">See the work <i class="bi bi-arrow-down"></i></a>
+          <h1 class="jersey-title">
+            <span class="sr-only">Augustino Elisaia</span>
+            <span class="jersey" data-jersey aria-hidden="true">
+              <svg class="jersey-svg" viewBox="0 0 640 490" focusable="false">
+                <defs>
+                  <path id="arcFirst" d="M150 84 Q320 -2 490 84" />
+                  <path id="arcLast" d="M50 222 Q320 78 590 222" />
+                  <clipPath id="nineClip">
+                    <text class="nine-glyph" x="320" y="482">99</text>
+                  </clipPath>
+                  <linearGradient id="nineBase" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#0f2a22" />
+                    <stop offset="1" stop-color="#0a1512" />
+                  </linearGradient>
+                  <linearGradient id="twill" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#f1cf7e" />
+                    <stop offset="0.55" stop-color="#e0b65a" />
+                    <stop offset="1" stop-color="#a77d2b" />
+                  </linearGradient>
+                </defs>
+
+                <text class="arch arch-first">
+                  <textPath href="#arcFirst" startOffset="50%"><tspan style="--i:0">A</tspan><tspan style="--i:1">U</tspan><tspan style="--i:2">G</tspan><tspan style="--i:3">U</tspan><tspan style="--i:4">S</tspan><tspan style="--i:5">T</tspan><tspan style="--i:6">I</tspan><tspan style="--i:7">N</tspan><tspan style="--i:8">O</tspan></textPath>
+                </text>
+                <text class="arch arch-last">
+                  <textPath href="#arcLast" startOffset="50%"><tspan style="--i:3">E</tspan><tspan style="--i:4">L</tspan><tspan style="--i:5">I</tspan><tspan style="--i:6">S</tspan><tspan style="--i:7">A</tspan><tspan style="--i:8">I</tspan><tspan style="--i:9">A</tspan></textPath>
+                </text>
+
+                <g class="nine">
+                  <text class="nine-glyph nine-twill" x="320" y="482">99</text>
+                  <text class="nine-glyph nine-gap" x="320" y="482">99</text>
+                  <g clip-path="url(#nineClip)">
+                    <rect x="0" y="200" width="640" height="290" fill="url(#nineBase)" />
+                    <g class="nine-code" data-nine-code></g>
+                    <rect class="nine-sheen" x="-200" y="200" width="160" height="290" />
+                  </g>
+                  <text class="nine-glyph nine-stitch" x="320" y="482">99</text>
+                  <text class="nine-glyph nine-edge" x="320" y="482">99</text>
+                </g>
+              </svg>
+            </span>
+          </h1>
+
+          <div class="name-ruler intro" style="--d: 420ms" aria-hidden="true">
+            <span class="ruler-label ruler-field">DT · #99</span>
+            <span class="ruler-track"><span class="ruler-ball"></span></span>
+            <span class="ruler-label ruler-code">SWE · Consensus</span>
+          </div>
+
+          <p class="hero-tagline intro" style="--d: 300ms">
+            Software engineer, <em>Bay Area</em>.
+          </p>
+
+          <p class="lead intro" style="--d: 400ms">
+            I build full-stack products with TypeScript, React, Node.js and AWS. Before that, I spent my twenties
+            as a defensive tackle at Cal Poly and with the San Francisco 49ers. Same work ethic, different playbook.
+          </p>
+
+          <div class="hero-actions intro" style="--d: 520ms">
+            <a class="btn btn-primary" href="#projects">See the work <i class="bi bi-arrow-down"></i></a>
             <a class="btn" target="_blank" rel="noopener" href="https://pdfhost.io/v/W.27~f4fs_Augustino_Elisaia_Resume">
               <i class="bi bi-file-earmark-text"></i> Resume
             </a>
@@ -89,12 +139,33 @@
           </div>
         </div>
 
+        <!-- Editor: animated "about me" source file -->
         <div class="hero-visual intro" style="--d: 260ms">
-          <span class="jersey" aria-hidden="true">99</span>
-          <figure class="hero-photo">
-            <img src="assets/img/about/Splash-img.jpeg" alt="Augustino flexing in his Cal Poly number 99 jersey" width="1298" height="1594">
-            <figcaption class="chip chip-then">Then · Cal Poly DT · #99</figcaption>
-          </figure>
+          <div class="editor" data-tilt>
+            <div class="editor-bar">
+              <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="editor-tab"><i class="bi bi-filetype-tsx"></i> augustino.ts</span>
+              <span class="editor-branch"><i class="bi bi-git"></i> main</span>
+            </div>
+            <p class="sr-only">
+              Augustino Elisaia, software engineer at Consensus, based in Fremont, CA. Stack: TypeScript, React, Node.js, AWS.
+              Previously a defensive tackle with the SF 49ers, number 99.
+            </p>
+            <pre class="code" aria-hidden="true"><code><span class="cl"><span class="k">export const</span> <span class="v">engineer</span> = {</span>
+<span class="cl">  <span class="p">name</span>: <span class="s">"Augustino Elisaia"</span>,</span>
+<span class="cl">  <span class="p">role</span>: <span class="s">"Software Engineer"</span>,</span>
+<span class="cl">  <span class="p">company</span>: <span class="s">"Consensus"</span>,</span>
+<span class="cl">  <span class="p">based</span>: <span class="s">"Fremont, CA"</span>,</span>
+<span class="cl">  <span class="p">stack</span>: [<span class="s">"TypeScript"</span>, <span class="s">"React"</span>, <span class="s">"Node.js"</span>, <span class="s">"AWS"</span>],</span>
+<span class="cl">  <span class="c">// previously: DT, SF 49ers · #99</span></span>
+<span class="cl">  <span class="p">shipping</span>: <span class="n">true</span>,</span>
+<span class="cl">};</span></code></pre>
+            <div class="terminal" aria-hidden="true">
+              <p class="term-line"><span class="prompt">~/consensus</span> <span class="t-cmd">$ npm run ship</span></p>
+              <p class="term-line term-out"><span class="ok">✓</span> staging <span class="ok">✓</span> uat <span class="ok">✓</span> production <span class="muted">· 1.2s</span></p>
+            </div>
+          </div>
+
           <div class="now-card">
             <img src="assets/img/about/Headshot.png" alt="" width="2131" height="1705">
             <div>
@@ -106,53 +177,59 @@
         </div>
       </div>
 
-      <!-- The drive: career at a glance -->
+      <!-- Career at a glance, as a commit history -->
       <div class="container">
-        <section class="drive intro" style="--d: 760ms" aria-labelledby="drive-title">
-          <div class="drive-head">
-            <h2 class="drive-title" id="drive-title">The drive <span>2014 → today</span></h2>
-            <p class="drive-legend">
-              <span><i class="key key-field"></i>On the field</span>
+        <section class="gitlog intro" style="--d: 700ms" aria-labelledby="gitlog-title">
+          <div class="gitlog-head">
+            <h2 class="gitlog-title" id="gitlog-title"><i class="bi bi-git"></i> git log <span>--career --oneline</span></h2>
+            <p class="gitlog-legend">
               <span><i class="key key-code"></i>In the code</span>
+              <span><i class="key key-field"></i>On the field</span>
             </p>
           </div>
 
-          <ol class="field" data-stagger>
-            <li class="stop is-field">
-              <span class="stop-year">2014</span>
-              <span class="stop-node" aria-hidden="true"></span>
-              <strong>Cal Poly</strong>
-              <span class="stop-role">FCS All-American, 2x captain</span>
-            </li>
-            <li class="stop is-field">
-              <span class="stop-year">2019</span>
-              <span class="stop-node" aria-hidden="true"></span>
-              <strong>SF 49ers</strong>
-              <span class="stop-role">NFL defensive tackle</span>
-            </li>
-            <li class="stop is-code">
-              <span class="stop-year">2022</span>
-              <span class="stop-node" aria-hidden="true"></span>
-              <strong>App Academy</strong>
-              <span class="stop-role">Switched sides to full-stack</span>
-            </li>
-            <li class="stop is-code">
-              <span class="stop-year">2023</span>
-              <span class="stop-node" aria-hidden="true"></span>
-              <strong>SF Civic Tech</strong>
-              <span class="stop-role">Open-source civic tools</span>
-            </li>
-            <li class="stop is-code">
-              <span class="stop-year">2025</span>
-              <span class="stop-node" aria-hidden="true"></span>
-              <strong>Saleo</strong>
-              <span class="stop-role">Live demo platform, 120+ PRs</span>
-            </li>
-            <li class="stop is-code is-now">
-              <span class="stop-year">Now</span>
-              <span class="stop-node" aria-hidden="true"></span>
+          <ol class="commits" data-stagger>
+            <li class="commit is-code is-now">
+              <span class="commit-node" aria-hidden="true"></span>
+              <span class="commit-hash">HEAD</span>
+              <span class="commit-year">Now</span>
               <strong>Consensus</strong>
-              <span class="stop-role">Software engineer since 2026</span>
+              <span class="commit-msg">Software engineer since 2026</span>
+            </li>
+            <li class="commit is-code">
+              <span class="commit-node" aria-hidden="true"></span>
+              <span class="commit-hash">5a1e0c2</span>
+              <span class="commit-year">2025</span>
+              <strong>Saleo</strong>
+              <span class="commit-msg">Live demo platform, 120+ PRs</span>
+            </li>
+            <li class="commit is-code">
+              <span class="commit-node" aria-hidden="true"></span>
+              <span class="commit-hash">c1v1c23</span>
+              <span class="commit-year">2023</span>
+              <strong>SF Civic Tech</strong>
+              <span class="commit-msg">Open-source civic tools</span>
+            </li>
+            <li class="commit is-code">
+              <span class="commit-node" aria-hidden="true"></span>
+              <span class="commit-hash">a99c4d2</span>
+              <span class="commit-year">2022</span>
+              <strong>App Academy</strong>
+              <span class="commit-msg">Switched sides to full-stack</span>
+            </li>
+            <li class="commit is-field">
+              <span class="commit-node" aria-hidden="true"></span>
+              <span class="commit-hash">49e2019</span>
+              <span class="commit-year">2019</span>
+              <strong>SF 49ers</strong>
+              <span class="commit-msg">NFL defensive tackle</span>
+            </li>
+            <li class="commit is-field">
+              <span class="commit-node" aria-hidden="true"></span>
+              <span class="commit-hash">init#99</span>
+              <span class="commit-year">2014</span>
+              <strong>Cal Poly</strong>
+              <span class="commit-msg">FCS All-American, 2x captain</span>
             </li>
           </ol>
         </section>
@@ -180,25 +257,11 @@
     <section id="about" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <h2>Football taught me to read the field. <em>Engineering</em> is the same game.</h2>
+          <p class="eyebrow"><span>01</span> About</p>
+          <h2>Competitive by nature. <em>Engineer</em> by trade.</h2>
         </header>
 
         <div class="about-grid">
-          <div class="about-photos" data-stagger aria-label="Personal photos">
-            <figure class="photo photo-a">
-              <img src="assets/img/about/Niners.jpeg" alt="Augustino on the field at Levi's Stadium in 49ers practice gear" loading="lazy">
-              <figcaption>Levi's Stadium, 2019</figcaption>
-            </figure>
-            <figure class="photo photo-b">
-              <img src="assets/img/about/Fam2.png" alt="Augustino with his family" loading="lazy">
-              <figcaption>The home team</figcaption>
-            </figure>
-            <figure class="photo photo-c">
-              <img src="assets/img/about/zane.JPG" alt="Augustino's son" loading="lazy">
-              <figcaption>Future captain</figcaption>
-            </figure>
-          </div>
-
           <div class="about-copy reveal">
             <p class="about-lede">
               I'm a former professional athlete turned software engineer. I love competitive, fast-paced environments,
@@ -222,82 +285,108 @@
               <div><dt>Bootcamp</dt><dd>App Academy</dd></div>
             </dl>
           </div>
+
+          <div class="about-photos" data-stagger aria-label="Personal photos">
+            <figure class="photo photo-a">
+              <img src="assets/img/about/Fam2.png" alt="Augustino with his family" loading="lazy">
+              <figcaption>The home team</figcaption>
+            </figure>
+            <figure class="photo photo-b">
+              <img src="assets/img/about/zane.JPG" alt="Augustino's son" loading="lazy">
+              <figcaption>Future captain</figcaption>
+            </figure>
+            <figure class="photo photo-c is-then">
+              <img src="assets/img/about/Splash-img.jpeg" alt="Augustino flexing in his Cal Poly number 99 jersey" loading="lazy">
+              <figcaption>Then · Cal Poly DT · #99</figcaption>
+            </figure>
+            <figure class="photo photo-d is-then">
+              <img src="assets/img/about/Niners.jpeg" alt="Augustino on the field at Levi's Stadium in 49ers practice gear" loading="lazy">
+              <figcaption>Levi's Stadium, 2019</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ======= Playbook ======= -->
-    <section id="playbook" class="section">
+    <!-- ======= Principles ======= -->
+    <section id="principles" class="section">
       <div class="container">
         <header class="section-head reveal">
+          <p class="eyebrow"><span>—</span> How I work</p>
           <h2>Habits I brought from the locker room to the <em>codebase</em>.</h2>
         </header>
 
-        <div class="plays" data-stagger>
-          <article class="play">
-            <svg class="play-diagram" viewBox="0 0 200 110" aria-hidden="true">
-              <line class="los" x1="10" y1="62" x2="190" y2="62" />
-              <circle cx="70" cy="80" r="7" /><circle cx="100" cy="80" r="7" /><circle cx="130" cy="80" r="7" />
-              <circle cx="100" cy="100" r="7" />
-              <path class="x" d="M64 38l12 12M76 38l-12 12M94 38l12 12M106 38l-12 12M124 38l12 12M136 38l-12 12" />
-              <path class="route" d="M100 93 C 100 70, 150 60, 165 22" />
-              <circle class="focus" cx="165" cy="22" r="10" />
+        <div class="principles" data-stagger>
+          <article class="principle">
+            <svg class="glyph glyph-diff" viewBox="0 0 200 110" aria-hidden="true">
+              <rect class="g-line" x="16" y="16" width="120" height="8" rx="4" />
+              <rect class="g-line del" x="16" y="34" width="150" height="8" rx="4" />
+              <rect class="g-line add" x="16" y="52" width="104" height="8" rx="4" />
+              <rect class="g-line" x="16" y="70" width="140" height="8" rx="4" />
+              <rect class="g-line" x="16" y="88" width="84" height="8" rx="4" />
+              <g class="lens"><circle cx="150" cy="50" r="22" /><path d="M166 66 L184 84" /></g>
             </svg>
-            <p class="play-from">Film study</p>
-            <h3><i class="bi bi-arrow-right"></i> Debugging &amp; code review</h3>
+            <p class="principle-num">01</p>
+            <h3>Debugging &amp; code review</h3>
             <p>I studied opponents frame by frame, looking for the tell. Now I read diffs, logs and traces the same way.</p>
+            <p class="origin"><i class="bi bi-arrow-return-right"></i> from film study</p>
           </article>
 
-          <article class="play">
-            <svg class="play-diagram" viewBox="0 0 200 110" aria-hidden="true">
-              <line class="los" x1="10" y1="62" x2="190" y2="62" />
-              <circle cx="40" cy="80" r="7" /><circle cx="70" cy="80" r="7" /><circle cx="100" cy="80" r="7" /><circle cx="130" cy="80" r="7" /><circle cx="160" cy="80" r="7" />
-              <path class="route" d="M40 73 V 30 H 80" />
-              <path class="route" d="M160 73 V 40 L 120 20" />
-              <path class="route" d="M100 73 V 45" />
-              <path class="route" d="M70 73 L 55 45" />
-              <path class="route" d="M130 73 L 145 45" />
+          <article class="principle">
+            <svg class="glyph glyph-graph" viewBox="0 0 200 110" aria-hidden="true">
+              <path class="edge" d="M40 55 L100 22 M40 55 L100 88 M100 22 L160 55 M100 88 L160 55 M100 22 L100 88" />
+              <circle class="node" cx="40" cy="55" r="9" />
+              <circle class="node" cx="100" cy="22" r="9" />
+              <circle class="node" cx="100" cy="88" r="9" />
+              <circle class="node hot" cx="160" cy="55" r="9" />
             </svg>
-            <p class="play-from">The playbook</p>
-            <h3><i class="bi bi-arrow-right"></i> Systems thinking</h3>
+            <p class="principle-num">02</p>
+            <h3>Systems thinking</h3>
             <p>Mastering an NFL playbook meant knowing every assignment, not just mine. I learn the whole system before I change a piece of it.</p>
+            <p class="origin"><i class="bi bi-arrow-return-right"></i> from the playbook</p>
           </article>
 
-          <article class="play">
-            <svg class="play-diagram" viewBox="0 0 200 110" aria-hidden="true">
-              <line class="los" x1="10" y1="62" x2="190" y2="62" />
-              <circle cx="60" cy="80" r="7" /><circle cx="100" cy="80" r="7" /><circle cx="140" cy="80" r="7" />
-              <path class="route" d="M100 73 V 52 C 100 34, 120 24, 182 18" />
-              <path class="goal" d="M182 6 V 30" />
-              <text class="clock" x="16" y="30">0:58</text>
+          <article class="principle">
+            <svg class="glyph glyph-pipe" viewBox="0 0 200 110" aria-hidden="true">
+              <path class="track" d="M30 55 H170" />
+              <path class="flow" d="M30 55 H170" />
+              <circle class="stage s1" cx="30" cy="55" r="10" />
+              <circle class="stage s2" cx="100" cy="55" r="10" />
+              <circle class="stage s3" cx="170" cy="55" r="10" />
+              <text x="30" y="88">stg</text><text x="100" y="88">uat</text><text x="170" y="88">prod</text>
+              <text class="clock" x="100" y="24">0:58</text>
             </svg>
-            <p class="play-from">Two-minute drill</p>
-            <h3><i class="bi bi-arrow-right"></i> Shipping under pressure</h3>
+            <p class="principle-num">03</p>
+            <h3>Shipping under pressure</h3>
             <p>Clock running, no panic. I've taken releases through staging, UAT and production on tight timelines with Terraform and GitHub Actions.</p>
+            <p class="origin"><i class="bi bi-arrow-return-right"></i> from the two-minute drill</p>
           </article>
 
-          <article class="play">
-            <svg class="play-diagram" viewBox="0 0 200 110" aria-hidden="true">
-              <line class="los" x1="10" y1="62" x2="190" y2="62" />
-              <circle cx="55" cy="80" r="7" /><circle cx="80" cy="80" r="7" /><circle cx="120" cy="80" r="7" /><circle cx="145" cy="80" r="7" />
-              <circle class="captain" cx="100" cy="80" r="9" />
-              <text class="c" x="100" y="84">C</text>
-              <path class="route" d="M100 71 V 30" />
-              <path class="route faint" d="M55 73 L 75 40 M80 73 L 90 40 M120 73 L 110 40 M145 73 L 125 40" />
+          <article class="principle">
+            <svg class="glyph glyph-merge" viewBox="0 0 200 110" aria-hidden="true">
+              <path class="branch" d="M30 80 H170" />
+              <path class="branch alt" d="M60 80 C 80 30, 120 30, 140 80" />
+              <circle class="node" cx="30" cy="80" r="7" />
+              <circle class="node" cx="60" cy="80" r="7" />
+              <circle class="node" cx="100" cy="42" r="7" />
+              <circle class="node hot" cx="140" cy="80" r="9" />
+              <circle class="node" cx="170" cy="80" r="7" />
             </svg>
-            <p class="play-from">Team captain</p>
-            <h3><i class="bi bi-arrow-right"></i> Ownership</h3>
+            <p class="principle-num">04</p>
+            <h3>Ownership</h3>
             <p>Elected captain twice. I lead by doing the work, unblocking teammates and owning the outcome, win or lose.</p>
+            <p class="origin"><i class="bi bi-arrow-return-right"></i> from team captain</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- ======= Experience ======= -->
-    <section id="experience" class="section section-dark">
+    <section id="experience" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <h2>Where I've <em>played</em>.</h2>
+          <p class="eyebrow"><span>02</span> Experience</p>
+          <h2>Where I've <em>shipped</em>.</h2>
         </header>
 
         <div class="jobs">
@@ -361,62 +450,68 @@
               <ul class="tags"><li>Django</li><li>Python</li><li>PostgreSQL</li><li>REST</li></ul>
             </div>
           </details>
+        </div>
 
-          <details class="job reveal">
-            <summary>
-              <span class="job-date">Jun 2019 — Sep 2021</span>
-              <span class="job-title">
-                <strong>San Francisco 49ers</strong>
-                <span>Professional Athlete · Defensive Tackle</span>
-              </span>
-              <span class="job-toggle" aria-hidden="true"></span>
-            </summary>
-            <div class="job-body">
-              <ul class="bullets">
-                <li>Competed alongside the highest level of athletes in the world as a defensive tackle in the NFL.</li>
-                <li>Mastered a complex NFL playbook, sharpening process analysis and critical thinking under pressure.</li>
-                <li>Prepared for opponents through film study and 1-on-1 coaching sessions, building disciplined strategic planning habits.</li>
-                <li>Communicated constantly with teammates, coaches and officials, and helped build a culture of camaraderie and work ethic.</li>
-              </ul>
-            </div>
-          </details>
+        <!-- Athletic career: kept, but as the prequel -->
+        <div class="prequel reveal">
+          <h3 class="prequel-title"><span class="key key-field"></span> Before engineering <span>2014 — 2021</span></h3>
+          <div class="jobs jobs-field">
+            <details class="job">
+              <summary>
+                <span class="job-date">Jun 2019 — Sep 2021</span>
+                <span class="job-title">
+                  <strong>San Francisco 49ers</strong>
+                  <span>Professional Athlete · Defensive Tackle</span>
+                </span>
+                <span class="job-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="job-body">
+                <ul class="bullets">
+                  <li>Competed alongside the highest level of athletes in the world as a defensive tackle in the NFL.</li>
+                  <li>Mastered a complex NFL playbook, sharpening process analysis and critical thinking under pressure.</li>
+                  <li>Prepared for opponents through film study and 1-on-1 coaching sessions, building disciplined strategic planning habits.</li>
+                  <li>Communicated constantly with teammates, coaches and officials, and helped build a culture of camaraderie and work ethic.</li>
+                </ul>
+              </div>
+            </details>
 
-          <details class="job reveal">
-            <summary>
-              <span class="job-date">Jun 2014 — Dec 2018</span>
-              <span class="job-title">
-                <strong>Cal Poly Football</strong>
-                <span>Defensive Tackle · Team Captain</span>
-              </span>
-              <span class="job-toggle" aria-hidden="true"></span>
-            </summary>
-            <div class="job-body">
-              <ul class="bullets">
-                <li>Division I scholarship athlete, named FCS All-American and 2x All-Big Sky Conference defensive lineman.</li>
-                <li>Defensive Most Valuable Player, and elected team captain by coaches and peers for two seasons.</li>
-                <li>Balanced roughly 40 hours a week of training, film study, travel and competition with a full-time course load.</li>
-              </ul>
-            </div>
-          </details>
+            <details class="job">
+              <summary>
+                <span class="job-date">Jun 2014 — Dec 2018</span>
+                <span class="job-title">
+                  <strong>Cal Poly Football</strong>
+                  <span>Defensive Tackle · Team Captain</span>
+                </span>
+                <span class="job-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="job-body">
+                <ul class="bullets">
+                  <li>Division I scholarship athlete, named FCS All-American and 2x All-Big Sky Conference defensive lineman.</li>
+                  <li>Defensive Most Valuable Player, and elected team captain by coaches and peers for two seasons.</li>
+                  <li>Balanced roughly 40 hours a week of training, film study, travel and competition with a full-time course load.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
         </div>
 
         <div class="edu reveal">
           <h3 class="edu-title">Education</h3>
           <div class="edu-grid">
             <div class="edu-item">
-              <span class="edu-icon"><i class="bi bi-mortarboard"></i></span>
-              <div>
-                <h4>California Polytechnic State University, San Luis Obispo</h4>
-                <p>Kinesiology &amp; Exercise Science</p>
-                <span>Aug 2014 — Jun 2019</span>
-              </div>
-            </div>
-            <div class="edu-item">
               <span class="edu-icon"><i class="bi bi-code-slash"></i></span>
               <div>
                 <h4>App Academy</h4>
                 <p>Full-Stack Software Engineering</p>
                 <span>Jun 2022 — Nov 2022</span>
+              </div>
+            </div>
+            <div class="edu-item">
+              <span class="edu-icon"><i class="bi bi-mortarboard"></i></span>
+              <div>
+                <h4>California Polytechnic State University, San Luis Obispo</h4>
+                <p>Kinesiology &amp; Exercise Science</p>
+                <span>Aug 2014 — Jun 2019</span>
               </div>
             </div>
           </div>
@@ -428,6 +523,7 @@
     <section id="projects" class="section">
       <div class="container">
         <header class="section-head reveal">
+          <p class="eyebrow"><span>03</span> Work</p>
           <h2>Things I've <em>built</em> on my own time.</h2>
         </header>
 
@@ -446,7 +542,7 @@
               </p>
               <ul class="tags"><li>React</li><li>JavaScript</li><li>Material UI</li><li>CSS</li></ul>
               <div class="project-links">
-                <a class="btn btn-ink btn-sm" target="_blank" rel="noopener" href="https://search-mini.vercel.app/">Live site <i class="bi bi-arrow-up-right"></i></a>
+                <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://search-mini.vercel.app/">Live site <i class="bi bi-arrow-up-right"></i></a>
                 <a class="btn btn-sm" target="_blank" rel="noopener" href="https://github.com/elisaia55/Mini-Search"><i class="bi bi-github"></i> Code</a>
               </div>
             </div>
@@ -466,7 +562,7 @@
               </p>
               <ul class="tags"><li>React</li><li>Redux</li><li>Flask</li><li>SQLAlchemy</li><li>PostgreSQL</li><li>yFinance</li></ul>
               <div class="project-links">
-                <a class="btn btn-ink btn-sm" target="_blank" rel="noopener" href="https://alphahood.herokuapp.com/">Live site <i class="bi bi-arrow-up-right"></i></a>
+                <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://alphahood.herokuapp.com/">Live site <i class="bi bi-arrow-up-right"></i></a>
                 <a class="btn btn-sm" target="_blank" rel="noopener" href="https://github.com/elisaia55/Alphahood"><i class="bi bi-github"></i> Code</a>
               </div>
             </div>
@@ -486,7 +582,7 @@
               </p>
               <ul class="tags"><li>React</li><li>Redux</li><li>Flask</li><li>Python</li><li>PostgreSQL</li></ul>
               <div class="project-links">
-                <a class="btn btn-ink btn-sm" target="_blank" rel="noopener" href="https://post-agram.herokuapp.com/login">Live site <i class="bi bi-arrow-up-right"></i></a>
+                <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://post-agram.herokuapp.com/login">Live site <i class="bi bi-arrow-up-right"></i></a>
                 <a class="btn btn-sm" target="_blank" rel="noopener" href="https://github.com/elisaia55/capstone_Postagram"><i class="bi bi-github"></i> Code</a>
               </div>
             </div>
@@ -499,6 +595,7 @@
     <section id="skills" class="section">
       <div class="container">
         <header class="section-head reveal">
+          <p class="eyebrow"><span>04</span> Toolkit</p>
           <h2>What I reach for <em>day to day</em>.</h2>
         </header>
 
@@ -531,26 +628,12 @@
     <section id="testimonials" class="section">
       <div class="container">
         <header class="section-head reveal">
+          <p class="eyebrow"><span>—</span> Kind words</p>
           <h2>From teammates on <em>both sides</em> of the ball.</h2>
         </header>
 
         <div class="quotes">
           <figure class="quote quote-feature reveal">
-            <blockquote>
-              In my years on the field, I've rarely encountered a teammate as dedicated and impactful as Augustino. He
-              exemplifies leadership through actions, elevating the performance of everyone around him. In both
-              challenging and triumphant times, he remains a steady force.
-            </blockquote>
-            <figcaption>
-              <img src="assets/img/testimonials/JoshL.png" alt="" loading="lazy">
-              <div>
-                <a target="_blank" rel="noopener" href="https://www.espn.com/nfl/player/_/id/2967751/josh-letuligasenoa">Josh Letuligasenoa</a>
-                <span>Former NFL player · Teammate</span>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="quote reveal">
             <blockquote>
               Augustino is a tremendously talented and considerate software engineer who would be an asset to any team
               fortunate enough to hire him. He possesses a knack for logical problem solving and is dedicated to
@@ -592,6 +675,21 @@
               </div>
             </figcaption>
           </figure>
+
+          <figure class="quote quote-field reveal">
+            <blockquote>
+              In my years on the field, I've rarely encountered a teammate as dedicated and impactful as Augustino. He
+              exemplifies leadership through actions, elevating the performance of everyone around him. In both
+              challenging and triumphant times, he remains a steady force.
+            </blockquote>
+            <figcaption>
+              <img src="assets/img/testimonials/JoshL.png" alt="" loading="lazy">
+              <div>
+                <a target="_blank" rel="noopener" href="https://www.espn.com/nfl/player/_/id/2967751/josh-letuligasenoa">Josh Letuligasenoa</a>
+                <span>Former NFL player · Teammate</span>
+              </div>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -600,6 +698,7 @@
     <section id="contact" class="section">
       <div class="container">
         <div class="contact reveal">
+          <p class="eyebrow"><span>05</span> Contact</p>
           <h2>Let's build something <em>worth</em> shipping.</h2>
           <p class="contact-lead">
             Have a project, a role, or just want to talk shop (or football)? My inbox is open.
@@ -612,7 +711,7 @@
                 <i class="bi bi-clipboard"></i><span>Copy</span>
               </button>
             </div>
-            <a class="btn btn-gold" target="_blank" rel="noopener" href="https://calendly.com/aelisaia99"><i class="bi bi-calendar-event"></i> Schedule a call</a>
+            <a class="btn btn-primary" target="_blank" rel="noopener" href="https://calendly.com/aelisaia99"><i class="bi bi-calendar-event"></i> Schedule a call</a>
           </div>
           <p class="copy-status" role="status" aria-live="polite"></p>
         </div>
@@ -623,7 +722,7 @@
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <p>© <span id="year">2026</span> Augustino Elisaia</p>
+      <p>© <span id="year">2026</span> Augustino Elisaia <span class="footer-build">· build #99</span></p>
       <p class="clock"><i class="bi bi-geo-alt"></i> Fremont, CA · <time id="local-time">--:--</time></p>
       <ul class="social">
         <li><a target="_blank" rel="noopener" href="https://github.com/elisaia55" aria-label="GitHub"><i class="bi bi-github"></i></a></li>
